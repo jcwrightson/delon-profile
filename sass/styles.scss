@@ -1,9 +1,22 @@
-@import "vars.scss";
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:wght@700;300&display=swap");
+
+// $feature-color: #0b101e;
+$feature-color: #1d133f;
+// $accent-color: #b0279e;
+$accent-color: change-color($feature-color, 160deg);
+
+$background-color: #f2f2f2;
+$foreground-color: rgb(34, 34, 34);
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+svg {
+  fill: currentColor;
+  width: 24px;
 }
 
 body {
@@ -26,7 +39,7 @@ section {
     h1 {
       color: invert($foreground-color);
       line-height: 4.2rem;
-      max-width: 500px;
+      max-width: 520px;
       margin: 0;
     }
   }
@@ -102,7 +115,6 @@ a:visited {
   text-decoration: none;
 }
 
-
 h1 {
   font-family: "Work Sans", sans-serif;
   font-size: 4rem;
@@ -126,6 +138,10 @@ h3 {
   margin: 0 0 2rem 0;
   font-weight: 300;
   color: $foreground-color;
+
+  &.small{
+    font-size: 1.3rem;
+  }
 }
 
 p {
@@ -134,7 +150,7 @@ p {
 }
 
 button {
-  border:none;
+  border: none;
   padding: 0.6rem 1.4rem;
   background-color: darken($feature-color, 5%);
   color: $background-color;
@@ -169,22 +185,17 @@ ul.skills {
   }
 }
 
-ul.social{
+ul.social {
   display: flex;
   flex-direction: row;
 
   li {
     margin: 1rem;
 
-    svg{
+    svg {
       width: 1.8rem;
     }
   }
-}
-
-svg{
-  fill: currentColor;
-  width: 24px;
 }
 
 .slider {
@@ -192,10 +203,6 @@ svg{
   min-height: 550px;
   overflow: hidden;
   height: auto;
-
-  .controls {
-    margin: 1rem 0;
-  }
 
   .slides {
     position: relative;
@@ -217,7 +224,7 @@ svg{
       img {
         width: 100%;
         height: auto;
-        padding: .5rem;
+        padding: 0.5rem;
       }
 
       &.active {
@@ -231,5 +238,14 @@ svg{
         padding: 2rem;
       }
     }
+  }
+}
+
+.controls {
+  margin: 1rem 0;
+
+  svg {
+    width: 10px !important;
+    height: auto;
   }
 }
