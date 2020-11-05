@@ -25,6 +25,32 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+nav {
+  background-color: darken($feature-color, 10%);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  .container {
+    display: flex;
+
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    color: invert($foreground-color);
+
+    max-width: 1920px;
+    margin: auto;
+  }
+
+  ul.social{
+    li {
+      margin: 0 1rem;
+    }
+  }
+}
+
 section {
   width: 100%;
   padding: 2rem 2rem 3rem 3rem;
@@ -38,7 +64,7 @@ section {
 
     h1 {
       color: invert($foreground-color);
-      line-height: 4.2rem;
+      line-height: 4.8rem;
       max-width: 520px;
       margin: 0;
     }
@@ -64,12 +90,11 @@ section {
   }
 
   &.projects {
-    // border-top: 1px solid #ccc;
     background-color: invert($foreground-color);
   }
 
   &.footer {
-    min-height: 50vh;
+    min-height: 30vh;
     background-color: rgb(2, 2, 2);
     color: $background-color;
 
@@ -98,7 +123,7 @@ img.profile {
   max-width: 10rem;
   width: 100%;
   height: auto;
-  margin: 2rem;
+  margin: 4rem;
 }
 
 ul,
@@ -121,6 +146,13 @@ h1 {
   margin: 0 0 2rem 0;
   font-weight: 700;
   color: $foreground-color;
+
+  &.brand {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: inherit;
+  }
 }
 
 h2 {
@@ -139,7 +171,7 @@ h3 {
   font-weight: 300;
   color: $foreground-color;
 
-  &.small{
+  &.small {
     font-size: 1.3rem;
   }
 }
