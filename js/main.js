@@ -24,7 +24,6 @@ const handleNext = () => {
   } else {
     idx = 0;
   }
-  console.log(idx);
   showSlide(idx);
 };
 
@@ -34,7 +33,6 @@ const handlePrev = () => {
   } else {
     idx = maxIdx;
   }
-  console.log(idx);
   showSlide(idx);
 };
 window.addEventListener("DOMContentLoaded", () => slider());

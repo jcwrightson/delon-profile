@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:wght@700;300&display=swap");
 
-// $feature-color: #0b101e;
-$feature-color: #1d133f;
-// $accent-color: #b0279e;
-$accent-color: change-color($feature-color, 160deg);
-
-$background-color: #f2f2f2;
+$background-color: rgb(242, 242, 242);
 $foreground-color: rgb(34, 34, 34);
+$hero-background-color: rgb(14, 16, 35);
+$nav-background-color: rgba(14, 16, 35, 0.95);
+$nav-color: rgb(221, 221, 221);
+
+$accent-color: #a0143f;
 
 * {
   box-sizing: border-box;
@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-  background-color: darken($feature-color, 10%);
+  background-color: $nav-background-color;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -37,16 +37,20 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    color: invert($foreground-color);
+    padding: 1rem 2rem;
+    color: $nav-color;
 
     max-width: 1920px;
     margin: auto;
   }
 
-  ul.social{
+  ul.social {
     li {
       margin: 0 1rem;
+
+      svg {
+        width: 20px;
+      }
     }
   }
 }
@@ -59,13 +63,13 @@ section {
   align-items: center;
 
   &.hero {
-    min-height: 70vh;
-    background-color: darken($feature-color, 10%);
+    min-height: 60vh;
+    background-color: $hero-background-color;
 
     h1 {
       color: invert($foreground-color);
-      line-height: 4.8rem;
-      max-width: 520px;
+      line-height: 4rem;
+      max-width: 440px;
       margin: 0;
     }
   }
@@ -142,7 +146,7 @@ a:visited {
 
 h1 {
   font-family: "Work Sans", sans-serif;
-  font-size: 4rem;
+  font-size: 3.2rem;
   margin: 0 0 2rem 0;
   font-weight: 700;
   color: $foreground-color;
@@ -150,8 +154,9 @@ h1 {
   &.brand {
     margin: 0;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: inherit;
+    letter-spacing: .1rem;
   }
 }
 
@@ -179,12 +184,14 @@ h3 {
 p {
   font-size: 1.2rem;
   padding-bottom: 1rem;
+  
 }
 
 button {
   border: none;
+  display: flex;
   padding: 0.6rem 1.4rem;
-  background-color: darken($feature-color, 5%);
+  background-color: darken($accent-color, 5%);
   color: $background-color;
   border-radius: 3px;
   text-transform: uppercase;
@@ -192,9 +199,11 @@ button {
   margin: 0.8rem;
   text-align: center;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
-    background-color: $feature-color;
+    background-color: $accent-color;
   }
 }
 
@@ -275,6 +284,7 @@ ul.social {
 
 .controls {
   margin: 1rem 0;
+  display: flex;
 
   svg {
     width: 10px !important;
